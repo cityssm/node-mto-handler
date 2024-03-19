@@ -1,0 +1,43 @@
+{
+  "name": "@cityssm/mto-handler",
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "description": "Generates files compatible with the Ontario Ministry of Transportation's Authorized Requester Information Services (ARIS). Parses files downloaded from ARIS.",
+  "exports": {
+    ".": "./index.js",
+    "./parser.js": "./mtoBatchParser.js",
+    "./writer.js": "./mtoBatchWriter.js"
+  },
+  "scripts": {
+    "test": "mocha",
+    "coverage": "c8 mocha"
+  },
+  "keywords": [
+    "aris",
+    "mto",
+    "ontario"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cityssm/node-mto-handler.git"
+  },
+  "author": "The Corporation of the City of Sault Ste. Marie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cityssm/node-mto-handler/issues"
+  },
+  "homepage": "https://github.com/cityssm/node-mto-handler#readme",
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.30",
+    "eslint-config-cityssm": "^1.4.2"
+  },
+  "dependencies": {
+    "@cityssm/is-sault-ste-marie": "^0.3.0",
+    "@cityssm/ncic-lookup": "^0.3.0",
+    "@cityssm/utils-datetime": "^1.1.2"
+  }
+}

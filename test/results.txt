@@ -1,0 +1,4 @@
+PKRA    1240319     2YN      240319                                                                                                                                                                                                      
+PKRDSAMPLE1   240110TKT1234     X12345123451234900510MMARIO,MARIO                                       99 FOSTER DR,S STE MARIE                P6A5X6CHRY23123000  KMRED                                   2501                         
+PKRDSAMPLE2   600111TKT1235     Y12345123451234911225FPEACH,PRINCESS                                    CASTLE,MUSHROOM KINGDOM                 X1X1X1MAZD20124500  KMPNK                                   2602                         
+PKRZ000002000002000000000000000000000002                                                                                                                                                                                                 
