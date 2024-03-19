@@ -1,10 +1,10 @@
 import { fixSaultSteMarie } from '@cityssm/is-sault-ste-marie';
 import { getFieldValueDescription } from '@cityssm/ncic-lookup';
 import { dateToString } from '@cityssm/utils-datetime';
-import { yyToYyyy, yymmddToDateString } from './utilities.js';
+import { NEWLINE, yyToYyyy, yymmddToDateString } from './utilities.js';
 function parsePKRA(rowData) {
     if (!rowData.startsWith('PKRA')) {
-        return;
+        return undefined;
     }
     /*
      * PKRA RECORD
@@ -38,7 +38,7 @@ function parsePKRA(rowData) {
 }
 async function parsePKRD(rowData) {
     if (!rowData.startsWith('PKRD')) {
-        return;
+        return undefined;
     }
     /*
      * PKRD RECORD
@@ -109,7 +109,7 @@ async function parsePKRD(rowData) {
  */
 export async function parseMTOBatchResult(resultData) {
     // Split the file into rows
-    const ownershipDataRows = resultData.split('\n');
+    const ownershipDataRows = resultData.split(NEWLINE);
     if (ownershipDataRows.length === 0) {
         throw new Error('The file contains zero data rows.');
     }

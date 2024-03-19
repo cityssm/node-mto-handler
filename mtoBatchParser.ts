@@ -2,7 +2,7 @@ import { fixSaultSteMarie } from '@cityssm/is-sault-ste-marie'
 import { getFieldValueDescription } from '@cityssm/ncic-lookup'
 import { type DateString, dateToString } from '@cityssm/utils-datetime'
 
-import { yyToYyyy, yymmddToDateString } from './utilities.js'
+import { NEWLINE, yyToYyyy, yymmddToDateString } from './utilities.js'
 
 export interface MTOBatchResultEntry {
   licencePlateNumber: string
@@ -41,7 +41,7 @@ interface MTOBatchResultHeader {
 
 function parsePKRA(rowData: string): undefined | MTOBatchResultHeader {
   if (!rowData.startsWith('PKRA')) {
-    return
+    return undefined
   }
 
   /*
@@ -86,7 +86,7 @@ async function parsePKRD(
   rowData: string
 ): Promise<undefined | MTOBatchResultEntry> {
   if (!rowData.startsWith('PKRD')) {
-    return
+    return undefined
   }
 
   /*
@@ -207,7 +207,7 @@ export async function parseMTOBatchResult(
 ): Promise<MTOBatchResults> {
   // Split the file into rows
 
-  const ownershipDataRows = resultData.split('\n')
+  const ownershipDataRows = resultData.split(NEWLINE)
 
   if (ownershipDataRows.length === 0) {
     throw new Error('The file contains zero data rows.')
