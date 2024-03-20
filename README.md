@@ -8,3 +8,47 @@
 Generates files compatible with the Ontario Ministry of Transportation's
 Authorized Requester Information Services (ARIS).
 Parses files downloaded from ARIS.
+
+## Installation
+
+```sh
+npm install @cityssm/mto-handler
+```
+
+## Usage
+
+```javascript
+import fs from 'node:fs/promises'
+
+import { MTOBatchWriter, parseMTOBatchResult } from '@cityssm/mto-handler'
+
+/*
+ * Generate a file to send to MTO
+ */
+
+const writer = new MTOBatchWriter({
+  authorizedUser: 'XXXX',
+  includeLabels: false,
+  sentDate: '2024-03-19'
+})
+
+writer.addBatchEntry({
+  issueDate: '2024-01-01',
+  ticketNumber: 'TKT12345',
+  licencePlateNumber: 'SAMPLE'
+})
+
+const fileData = writer.writeBatch()
+
+await fs.writeFile('./path/to/uploadToMto.txt', fileData)
+
+/*
+ * Parse data retrieved from MTO
+ */
+
+const resultsBuffer = await fs.readFile('./path/to/downloadedFromMto.txt')
+
+const resultsData = resultsBuffer.toString()
+
+const results = await parseMTOBatchResult(resultsData)
+```
