@@ -1,5 +1,6 @@
 # MTO ARIS Handler for Node
 
+[![npm (scoped)](https://img.shields.io/npm/v/%40cityssm/mto-handler)](https://www.npmjs.com/package/@cityssm/mto-handler)
 [![DeepSource](https://app.deepsource.com/gh/cityssm/node-mto-handler.svg/?label=active+issues&show_trend=true&token=O09g-wYWZGGLdd8N8HU7xNww)](https://app.deepsource.com/gh/cityssm/node-mto-handler/)
 [![Maintainability](https://api.codeclimate.com/v1/badges/578e93a932f9a1304734/maintainability)](https://codeclimate.com/github/cityssm/node-mto-handler/maintainability)
 [![codecov](https://codecov.io/gh/cityssm/node-mto-handler/graph/badge.svg?token=H4CNROXCE6)](https://codecov.io/gh/cityssm/node-mto-handler)
