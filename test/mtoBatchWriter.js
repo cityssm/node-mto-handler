@@ -10,13 +10,13 @@ describe('MTO Batch Writer', () => {
         }, [
             {
                 issueDate: dateToString(new Date()),
-                ontarioLicencePlateNumber: 'SAMPLE1',
+                licencePlateNumber: 'SAMPLE1',
                 ticketNumber: 'TKT-12345'
             }
         ]);
         batch.addBatchEntry({
             issueDate: dateToString(new Date()),
-            ontarioLicencePlateNumber: 'SAMPLE2',
+            licencePlateNumber: 'SAMPLE2',
             ticketNumber: 'TKT-12346'
         });
         const batchString = batch.writeBatch();

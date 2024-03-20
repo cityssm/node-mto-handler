@@ -5,7 +5,7 @@ export interface MTOBatchWriterConfig {
     includeLabels: boolean;
 }
 export interface MTOBatchWriterEntry {
-    ontarioLicencePlateNumber: string;
+    licencePlateNumber: string;
     ticketNumber: string;
     issueDate: DateString;
 }

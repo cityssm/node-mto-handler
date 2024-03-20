@@ -65,7 +65,7 @@ function parsePKRA(rowData: string): undefined | MTOBatchResultHeader {
     const rawSentDate = rowData.slice(9, 15).trim()
 
     if (rawSentDate === '') {
-      return
+      return undefined
     }
 
     record.sentDate = yymmddToDateString(rawSentDate)
@@ -73,7 +73,7 @@ function parsePKRA(rowData: string): undefined | MTOBatchResultHeader {
     const rawRecordDate = rowData.slice(29, 35).trim()
 
     if (rawRecordDate === '') {
-      return
+      return undefined
     }
 
     record.recordDate = yymmddToDateString(rawRecordDate)

@@ -29,7 +29,7 @@ export class MTOBatchWriter {
         for (const entry of this.#batchEntries) {
             output +=
                 'PKTD' +
-                    entry.ontarioLicencePlateNumber.padEnd(10).slice(0, 10) +
+                    entry.licencePlateNumber.padEnd(10).slice(0, 10) +
                     dateStringToYymmdd(entry.issueDate) +
                     entry.ticketNumber.padEnd(23).slice(0, 23) +
                     authorizedUserPadded +

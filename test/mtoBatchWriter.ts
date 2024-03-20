@@ -15,7 +15,7 @@ describe('MTO Batch Writer', () => {
       [
         {
           issueDate: dateToString(new Date()) as DateString,
-          ontarioLicencePlateNumber: 'SAMPLE1',
+          licencePlateNumber: 'SAMPLE1',
           ticketNumber: 'TKT-12345'
         }
       ]
@@ -23,7 +23,7 @@ describe('MTO Batch Writer', () => {
 
     batch.addBatchEntry({
       issueDate: dateToString(new Date()) as DateString,
-      ontarioLicencePlateNumber: 'SAMPLE2',
+      licencePlateNumber: 'SAMPLE2',
       ticketNumber: 'TKT-12346'
     })
 
