@@ -6,6 +6,10 @@ import { dateStringToDate } from '@cityssm/utils-datetime'
 import { parseMTOBatchResult } from '../index.js'
 
 describe('MTO Batch Parser', () => {
+  beforeEach((() => {
+    console.log('\n')
+  }))
+
   it('Parses a valid MTO results file', async () => {
     const resultsBuffer = await fs.readFile('./test/results/valid.txt')
 
@@ -15,15 +19,23 @@ describe('MTO Batch Parser', () => {
 
     const results = await parseMTOBatchResult(resultsData)
 
-    assert.strictEqual(results.unparsedResultsCount, 0)
-    assert.ok(results.parsedResults.length > 0)
-
     console.log(results)
 
+    assert.strictEqual(results.unparsedResultsCount, 0)
+
+    assert.ok(results.parsedResults.length > 0)
+
     for (const result of results.parsedResults) {
+      assert.strictEqual(result.errorCode, '')
       assert.ok(
         (dateStringToDate(result.issueDate) as Date).getTime() < Date.now()
       )
+    }
+
+    assert.ok(results.parsedResultsWithErrors.length > 0)
+
+    for (const result of results.parsedResultsWithErrors) {
+      assert.notStrictEqual(result.errorCode, '')
     }
   })
 
