@@ -79,7 +79,9 @@ function parsePKRA(rowData: string): undefined | MTOBatchResultHeader {
     record.recordDate = yymmddToDateString(rawRecordDate)
 
     return record as MTOBatchResultHeader
-  } catch {}
+  } catch {
+    return undefined
+  }
 }
 
 async function parsePKRD(

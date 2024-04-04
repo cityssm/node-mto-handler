@@ -34,7 +34,9 @@ function parsePKRA(rowData) {
         record.recordDate = yymmddToDateString(rawRecordDate);
         return record;
     }
-    catch { }
+    catch {
+        return undefined;
+    }
 }
 async function parsePKRD(rowData) {
     if (!rowData.startsWith('PKRD')) {
