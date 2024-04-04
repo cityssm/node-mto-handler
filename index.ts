@@ -1,3 +1,5 @@
+import { getFieldValues } from '@cityssm/ncic-lookup'
+
 export {
   type MTOBatchWriterConfig,
   type MTOBatchWriterEntry,
@@ -9,3 +11,7 @@ export {
   type MTOBatchResults,
   parseMTOBatchResult
 } from './mtoBatchParser.js'
+
+export const vehicleMakes = await getFieldValues('VMA')
+
+export const vehicleColors = await getFieldValues('VCO')
