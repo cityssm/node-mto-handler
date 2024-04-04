@@ -27,18 +27,25 @@ describe('MTO Batch Parser', () => {
     }
   })
 
-  it('Throws an error on an invalid file', async () => {
-    const resultsBuffer = await fs.readFile('./test/results/invalid.txt')
+  const invalidFileNames = ['invalid-emptyFile.txt', 'invalid-emptyRows.txt']
 
-    const resultsData = resultsBuffer.toString()
+  for (const invalidFileName of invalidFileNames) {
+    it(`Throws an error on an invalid file: ${invalidFileName}`, async () => {
+      // eslint-disable-next-line security/detect-non-literal-fs-filename
+      const resultsBuffer = await fs.readFile(
+        `./test/results/${invalidFileName}`
+      )
 
-    console.log(resultsData)
+      const resultsData = resultsBuffer.toString()
 
-    try {
-      await parseMTOBatchResult(resultsData)
-      assert.fail()
-    } catch (error) {
-      assert.ok(true, error as Error)
-    }
-  })
+      console.log(resultsData)
+
+      try {
+        await parseMTOBatchResult(resultsData)
+        assert.fail()
+      } catch (error) {
+        assert.ok(true, error as Error)
+      }
+    })
+  }
 })
