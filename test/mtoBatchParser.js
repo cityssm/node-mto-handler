@@ -1,7 +1,7 @@
 import assert from 'node:assert';
 import fs from 'node:fs/promises';
 import { dateStringToDate } from '@cityssm/utils-datetime';
-import { parseMTOBatchResult } from '../mtoBatchParser.js';
+import { parseMTOBatchResult } from '../index.js';
 describe('MTO Batch Parser', () => {
     it('Parses an MTO results file', async () => {
         const resultsBuffer = await fs.readFile('./test/results.txt');

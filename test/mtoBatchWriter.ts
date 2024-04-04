@@ -2,7 +2,7 @@ import assert from 'node:assert'
 
 import { type DateString, dateToString } from '@cityssm/utils-datetime'
 
-import { MTOBatchWriter } from '../mtoBatchWriter.js'
+import { MTOBatchWriter } from '../index.js'
 
 describe('MTO Batch Writer', () => {
   it('Creates an MTO-formatted batch file', () => {
