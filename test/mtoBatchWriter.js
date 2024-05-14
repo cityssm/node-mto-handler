@@ -1,8 +1,9 @@
 import assert from 'node:assert';
+import { describe, it } from 'node:test';
 import { dateToString } from '@cityssm/utils-datetime';
 import { MTOBatchWriter } from '../index.js';
-describe('MTO Batch Writer', () => {
-    it('Creates an MTO-formatted batch file', () => {
+await describe('MTO Batch Writer', async () => {
+    await it('Creates an MTO-formatted batch file', async () => {
         const batch = new MTOBatchWriter({
             authorizedUser: 'XXXX',
             includeLabels: true,

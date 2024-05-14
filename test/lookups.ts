@@ -1,12 +1,13 @@
 import assert from 'node:assert'
+import { describe, it } from 'node:test'
 
 import { vehicleColors, vehicleMakes } from '../index.js'
 
-describe('Exported lookups', () => {
+await describe('Exported lookups', async () => {
   const vehicleMakeValues = ['CHEV', 'FORD', 'HYUN']
 
   for (const vehicleMake of vehicleMakeValues) {
-    it(`Includes popular vehicle make: ${vehicleMake}`, () => {
+    await it(`Includes popular vehicle make: ${vehicleMake}`, async () => {
       assert.ok(Object.keys(vehicleMakes).includes(vehicleMake))
     })
   }
@@ -14,7 +15,7 @@ describe('Exported lookups', () => {
   const vehicleColorValues = ['BLACK', 'BLUE', 'WHITE']
 
   for (const vehicleColor of vehicleColorValues) {
-    it(`Includes popular vehicle color: ${vehicleColor}`, () => {
+    await it(`Includes popular vehicle color: ${vehicleColor}`, async () => {
       assert.ok(Object.values(vehicleColors).includes(vehicleColor))
     })
   }
