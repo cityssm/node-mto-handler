@@ -31,12 +31,13 @@
   },
   "homepage": "https://github.com/cityssm/node-mto-handler#readme",
   "devDependencies": {
-    "@types/node": "^20.12.12",
-    "eslint-config-cityssm": "^2.1.0"
+    "@types/node": "^22.10.2",
+    "eslint-config-cityssm": "^18.1.2",
+    "prettier-config-cityssm": "^1.0.0"
   },
   "dependencies": {
     "@cityssm/is-sault-ste-marie": "^0.4.0",
     "@cityssm/ncic-lookup": "^0.3.1",
-    "@cityssm/utils-datetime": "^1.1.2"
+    "@cityssm/utils-datetime": "^1.3.0"
   }
 }
